@@ -1,10 +1,9 @@
-import Note from "../models/Note";
-
+import Note from "../models/Note.js";
 class NoteRepository {
   async create(data) {
     try {
       const note = await Note.create(data);
-      return data;
+      return note;
     } catch (error) {
       console.log(error);
       throw error;
@@ -26,8 +25,8 @@ class NoteRepository {
       const res = await Note.findById(id);
       return res;
     } catch (error) {
-      throw error;
       console.log(error);
+      throw error;
     }
   }
 
@@ -36,8 +35,8 @@ class NoteRepository {
       const Updatedata = await Note.findByIdAndUpdate(id, data);
       return Updatedata;
     } catch (error) {
-      throw error;
       console.log(error);
+        throw error;
     }
   }
 }
