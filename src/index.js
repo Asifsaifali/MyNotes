@@ -9,11 +9,11 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({extended:true}));
 
 const PORT = 3000
-app.listen(3000,async()=>{
+app.listen(3000,async()=>{ 
     console.log(`Server is running on port ${PORT} `);
     await Connection();
     const serv = new NoteService();
-    const res = await serv.create({content : "Hey there this note is sending from service to repository to model to database"})
+    const res = await serv.destroy('6547b830ff922eabee92e943')
     console.log(res);
 
 })
