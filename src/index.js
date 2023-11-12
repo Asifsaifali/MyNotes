@@ -9,14 +9,14 @@ const ApiRoute = routes;
 
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended:true}));
-app.use('/Notes/api',ApiRoute);
+app.use('/api',ApiRoute);
 
 const PORT = 3000
-app.listen(3000,async()=>{ 
+app.listen(PORT,async()=>{ 
     console.log(`Server is running on port ${PORT} `);
     await Connection();
-    const serv = new NoteService();
-    const res = await serv.destroy('6547b830ff922eabee92e943')
-    console.log(res);
+    // const serv = new NoteService();
+    // const res = await serv.destroy('6547b830ff922eabee92e943')
+    // console.log(res);
 
 })
